@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SubscribeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::resource('/login' , ProfileController::class);
+Route::post('/login' , [LoginController::class , 'login']);
+Route::post('/logout' , [LoginController::class , 'logout']);
+Route::get('/register' , [RegisterController::class, 'index']);
+Route::post('/register' , [RegisterController::class, 'register']);
+Route::post('/subscribe' , [SubscribeController::class , 'subscribe']);
+

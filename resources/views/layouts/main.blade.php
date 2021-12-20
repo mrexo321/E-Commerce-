@@ -7,12 +7,15 @@
     <title>|||</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-<body>
+<body class="flex flex-col h-screen">
     @include('layouts.navbar')
-    <div class="container">
+    <div class="">
         @yield('container')
     </div>
 
-    {{-- @include('layouts.footer') --}}
+    @include('layouts.footer')
+
+    @include('sweetalert::alert')
+
 </body>
 </html>
